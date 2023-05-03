@@ -1,14 +1,22 @@
 const choices = ['rock', 'paper', 'scissors'];
 
-playerScore = 0;
+let playerScore = 0;
 
-computerScore = 0;
+let computerScore = 0;
 
-round = 0;
+let round = 0;
 
 function game() {
-    playRound();
-    return `Round = ${round} - Player score = ${playerScore} - Computer score =  ${computerScore}.`
+    if (round >= 5) {
+        return `Round = ${round} - Player score = ${playerScore} - Computer score =  ${computerScore}.`
+    }
+    else if (round <= 5) {
+        playRound();
+        round++
+    }
+    else {
+       return "Something went wrong"
+    }
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -17,8 +25,6 @@ function playRound(playerSelection, computerSelection) {
 
     computerSelection = choices[Math.floor(Math.random() * 3)];
 
-    round = round + 1; 
-    
     if (playerSelection == 'rock' && computerSelection == 'paper') {
         console.log(`You chose ${playerSelection}\nComputer chose ${computerSelection}\nYou lose! Paper beats rock.`);
         computerScore = computerScore + 1;
@@ -53,10 +59,7 @@ function playRound(playerSelection, computerSelection) {
         console.log(`You chose ${playerSelection}\nComputer chose ${computerSelection}\nTie!`)
     }
     else {
-        console.log("Something went wrong!")
+        console.log("Something went wrong!");
+        round--
     }
 }
-
-
-
-
