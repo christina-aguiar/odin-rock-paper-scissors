@@ -18,6 +18,7 @@ restart.addEventListener("click", () => {
     computerScore = 0;
     score.classList.remove("final");
     score.textContent = `Player score = ${playerScore}\r\nComputer score = ${computerScore}`;
+    restart.classList.add("hide");
 });
 
 const finalResult = document.querySelector('p.final-result');
