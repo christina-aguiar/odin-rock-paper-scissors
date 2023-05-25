@@ -18,7 +18,10 @@ h1, p {
 .pic {
     height: 250px;
 }
-button {
+.hide {
+    display: none;
+}
+.choice {
     border : 0px;
     background-color: white;
 }
@@ -36,5 +39,5 @@ button {
 }
 .final {
     background-color: pink;
-    font-size: 30px;
+    font-size: 20px;
 }
