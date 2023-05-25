@@ -69,21 +69,27 @@ function playRound(playerSelection) {
         result.textContent = `You chose ${playerSelection}\nComputer chose ${computerSelection}\nTie!`;
         updateText();
     }
-    else if (playerScore => 5) {
-        result.classList.add("final")
-        result.textContent = "you won"
-        updateText();
-    }
-    else if (computerScore => 5) {
-        result.classList.add("final")
-        result.textContent = "you lost"
-        updateText();
-    }
     else {
         result.textContent = "something went wrong"
+        updateText()
     }
 }
 
 function updateText() {
-score.textContent = `Player score = ${playerScore}\r\nComputer score = ${computerScore}`;
+    if (playerScore < 5 && computerScore < 5) {
+        score.textContent = `Player score = ${playerScore}\r\nComputer score = ${computerScore}`;
+    }
+    else if (playerScore >= 5) {
+        score.textContent = `Player score = ${playerScore}\r\nComputer score = ${computerScore}`
+        result.textContent = "You won"
+        result.classList.add('final')
+    }
+    else if (computerScore >= 5) {
+        score.textContent = `Player score = ${playerScore}\r\nComputer score = ${computerScore}`
+        result.textContent = "You lost"
+        result.classList.add('final')
+    }
+    else {
+        return
+    }
 }
