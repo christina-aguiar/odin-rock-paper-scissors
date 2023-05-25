@@ -15,10 +15,26 @@ h1, p {
     align-items: center;
 }
 
-.choice {
-    height: 300px;
+.pic {
+    height: 250px;
 }
-
+button {
+    border : 0px;
+    background-color: white;
+}
 .result {
     text-align: center;
+    white-space: pre-line;
+}
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px
+}
+.score {
+    white-space: pre-line;
+}
+.final {
+    background-color: pink;
+    font-size: 30px;
 }
