@@ -23,15 +23,15 @@ restart.addEventListener("click", () => {
 
 const finalResult = document.querySelector('p.final-result');
 
-const rockButton = document.querySelector('button.rock').addEventListener("click", function() {
+const rockButton = document.querySelector('button.rock').addEventListener("click", function () {
     playRound('rock');
 })
 
-const paperButton = document.querySelector('button.paper').addEventListener("click", function() {
+const paperButton = document.querySelector('button.paper').addEventListener("click", function () {
     playRound('paper');
 })
 
-const scissorsButton = document.querySelector('button.scissors').addEventListener("click", function() {
+const scissorsButton = document.querySelector('button.scissors').addEventListener("click", function () {
     playRound('scissors');
 })
 
@@ -43,7 +43,7 @@ function playRound(playerSelection) {
         result.textContent = `You chose ${playerSelection}\nComputer chose ${computerSelection}\nPaper beats rock.`;
         updateScore();
         computerScore = computerScore + 1;
-        
+
     }
     else if (playerSelection == 'rock' && computerSelection == 'rock' && computerScore < 5 && playerScore < 5) {
         result.textContent = `You chose ${playerSelection}\nComputer chose ${computerSelection}.\nTie!`;
@@ -63,7 +63,7 @@ function playRound(playerSelection) {
         result.textContent = `You chose ${playerSelection}\nComputer chose ${computerSelection}\nTie!`;
         updateScore();
     }
-    else if (playerSelection == 'paper' && computerSelection == 'scissors' && computerScore < 5 && playerScore < 5){
+    else if (playerSelection == 'paper' && computerSelection == 'scissors' && computerScore < 5 && playerScore < 5) {
         result.textContent = `You chose ${playerSelection}\nComputer chose ${computerSelection}\nScissors beat paper.`;
         computerScore = computerScore + 1;
         updateScore();
@@ -73,7 +73,7 @@ function playRound(playerSelection) {
         computerScore = computerScore + 1;
         updateScore();
     }
-    else if(playerSelection == 'scissors' && computerSelection == 'paper' && computerScore < 5 && playerScore < 5) {
+    else if (playerSelection == 'scissors' && computerSelection == 'paper' && computerScore < 5 && playerScore < 5) {
         result.textContent = `You chose ${playerSelection}\nComputer chose ${computerSelection}\nPaper beats scissors.`;
         playerScore = playerScore + 1;
         updateScore();
@@ -92,7 +92,7 @@ function playRound(playerSelection) {
 }
 
 function updateScore() {
-    if (computerScore >=5) {
+    if (computerScore >= 5) {
         score.classList.add("final")
         score.textContent = `Player score = ${playerScore}\r\nComputer score = ${computerScore}\nYOU LOST!`;
         restart.classList.remove("hide")
